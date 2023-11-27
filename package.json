@@ -1,0 +1,35 @@
+{
+  "name": "markdown-online",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/netlify": "^3.0.4",
+    "@astrojs/node": "^6.0.4",
+    "@astrojs/solid-js": "^3.0.2",
+    "@astrojs/vercel": "^5.2.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-highlightjs": "^4.0.1",
+    "markdown-it-katex": "^2.0.3",
+    "astro": "^3.6.0",
+    "solid-js": "^1.8.6",
+    "typescript": "^5.3.2"
+  },
+  "devDependencies": {
+    "@evan-yang/eslint-config": "^1.0.9",
+    "@iconify-json/carbon": "^1.1.20",
+    "@types/node": "^20.5.3",
+    "@typescript-eslint/parser": "^6.4.1",
+    "@unocss/reset": "^0.55.2",
+    "eslint": "^8.47.0",
+    "eslint-plugin-astro": "^0.28.0",
+    "unocss": "^0.55.2"
+  }
+}
