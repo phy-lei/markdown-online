@@ -13,15 +13,7 @@ export default defineConfig({
     presetAttributify(),
 
     presetTypography({
-      cssExtend: {
-        'ul,ol': {
-          'padding-left': '2.25em',
-          'position': 'relative',
-        },
-        'screens': {
-          '2xl': '1360px',
-        },
-      },
+
     }),
   ],
   theme: {

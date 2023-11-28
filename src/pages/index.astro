@@ -1,5 +1,6 @@
 ---
 import Editor from '@/components/editor';
+import Preview from '@/components/preview';
 ---
 
 <html lang="en">
@@ -9,13 +10,26 @@ import Editor from '@/components/editor';
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.4.0/github-markdown-light.min.css"
+      integrity="sha512-kDjsFiusauOzRWlNNk7R5nFRVUPFlZjIqI3F0/DYUO9Uz93R0V4zNfrWGSKFtZvHnTIsoM3GwDaqQBJt8ZVt6w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.8.0/styles/a11y-light.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="flex flex-col h-screen">
       <div class="w-full h-10">header</div>
       <div class="flex flex-1">
         <div id="editor" class="w-50% h-100%"></div>
-        <div class="w-50%">right</div>
+        <Preview client:load />
+
         <Editor client:load />
       </div>
     </div>
@@ -50,6 +64,14 @@ import Editor from '@/components/editor';
       lineNumbersMinChars: 3,
       overviewRulerBorder: false,
       padding: { top: 15 },
+    });
+
+    editor.onDidChangeModelContent((e) => {
+      console.log('[ editor ] >', editor.getValue());
+      const event = new CustomEvent('editor-change', {
+        detail: editor.getValue(),
+      });
+      window.dispatchEvent(event);
     });
     // setInterval(() => {
     //   console.log('[ editor ] >', editor.getValue());
