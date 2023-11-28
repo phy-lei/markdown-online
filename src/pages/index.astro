@@ -29,7 +29,6 @@ import Preview from '@/components/preview';
       <div class="flex flex-1">
         <div id="editor" class="w-50% h-100%"></div>
         <Preview client:load />
-
         <Editor client:load />
       </div>
     </div>
@@ -67,14 +66,10 @@ import Preview from '@/components/preview';
     });
 
     editor.onDidChangeModelContent((e) => {
-      console.log('[ editor ] >', editor.getValue());
       const event = new CustomEvent('editor-change', {
         detail: editor.getValue(),
       });
       window.dispatchEvent(event);
     });
-    // setInterval(() => {
-    //   console.log('[ editor ] >', editor.getValue());
-    // }, 1000);
   </script>
 </html>

@@ -15,11 +15,6 @@ const Preview = (props) => {
       .use(mdHighlight);
 
     const updateContent = (e: CustomEvent) => {
-      console.log(
-        '%c [ xxx ]',
-        'font-size:13px; background:pink; color:#bf2c9f;',
-        e.detail
-      );
       setContent(md.render(e.detail));
     };
     window.addEventListener('editor-change', updateContent);
