@@ -15,10 +15,11 @@
     "@astrojs/node": "^6.0.4",
     "@astrojs/solid-js": "^3.0.2",
     "@astrojs/vercel": "^5.2.0",
+    "astro": "^3.6.0",
     "markdown-it": "^13.0.1",
     "markdown-it-highlightjs": "^4.0.1",
     "markdown-it-katex": "^2.0.3",
-    "astro": "^3.6.0",
+    "monaco-editor": "^0.44.0",
     "solid-js": "^1.8.6",
     "typescript": "^5.3.2"
   },
