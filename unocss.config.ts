@@ -5,16 +5,18 @@ import {
   presetUno,
   transformerDirectives,
   transformerVariantGroup,
+  presetIcons
 } from 'unocss'
 
 export default defineConfig({
   presets: [
     presetUno(),
-    presetAttributify(),
-
-    presetTypography({
-
+    presetIcons({
+      scale: 1.1,
+      cdn: 'https://esm.sh/',
     }),
+    presetAttributify(),
+    presetTypography(),
   ],
   theme: {
     breakpoints: {
